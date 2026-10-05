@@ -42,6 +42,6 @@ The project is designed to support both **Intel (x86_64)** and **Apple Silicon (
 Install Naeso globally using npm:
 
 ```bash
-npm install -g naeso
+npm install -g @naesofteak/naeso
 
 
