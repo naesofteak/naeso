@@ -1,0 +1,100 @@
+{
+  "name": "mongodb",
+  "displayName": "MongoDB Community Server",
+  "description": "MongoDB Community Server with MongoDB Shell and Database Tools",
+  "category": "database",
+  "homepage": "https://www.mongodb.com/",
+  "license": "SSPL-1.0",
+
+  "versions": {
+    "9.0.2": {
+      "targets": {
+        "macos-x86_64": {
+          "artifacts": {
+            "server": {
+              "type": "tarball",
+              "url": "https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-9.0.2.tgz",
+              "sha256Url": "https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-9.0.2.tgz.sha256"
+            },
+
+            "mongosh": {
+              "type": "zip",
+              "version": "2.12.0",
+              "url": "https://downloads.mongodb.com/compass/mongosh-2.12.0-darwin-x64.zip"
+            },
+
+            "databaseTools": {
+              "type": "zip",
+              "version": "100.19.1",
+              "url": "https://fastdl.mongodb.org/tools/db/mongodb-database-tools-macos-x86_64-100.19.1.zip"
+            }
+          }
+        },
+
+        "macos-arm64": {
+          "artifacts": {
+            "server": {
+              "type": "tarball",
+              "url": "https://fastdl.mongodb.org/osx/mongodb-macos-arm64-9.0.2.tgz",
+              "sha256Url": "https://fastdl.mongodb.org/osx/mongodb-macos-arm64-9.0.2.tgz.sha256"
+            },
+
+            "mongosh": {
+              "type": "zip",
+              "version": "2.12.0",
+              "url": "https://downloads.mongodb.com/compass/mongosh-2.12.0-darwin-arm64.zip"
+            },
+
+            "databaseTools": {
+              "type": "zip",
+              "version": "100.19.1",
+              "url": "https://fastdl.mongodb.org/tools/db/mongodb-database-tools-macos-arm64-100.19.1.zip"
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "install": {
+    "type": "multi-artifact",
+
+    "artifacts": [
+      "server",
+      "mongosh",
+      "databaseTools"
+    ],
+
+    "binaries": [
+      "mongod",
+      "mongos",
+      "mongosh",
+      "mongodump",
+      "mongorestore",
+      "mongoexport",
+      "mongoimport",
+      "bsondump",
+      "mongostat",
+      "mongotop"
+    ],
+
+    "dataDirectory": "~/.naeso/data/mongodb",
+    "logDirectory": "~/.naeso/logs/mongodb",
+    "configDirectory": "~/.naeso/packages/mongodb/config"
+  },
+
+  "service": {
+    "manager": "launchd",
+    "label": "com.naesofteak.naeso.mongodb",
+    "startCommand": "mongod",
+    "stopCommand": "mongod",
+    "restartCommand": "mongod",
+    "statusCommand": "mongod"
+  },
+
+  "environment": {
+    "path": [
+      "~/.naeso/packages/mongodb/current/bin"
+    ]
+  }
+}

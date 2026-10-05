@@ -1,0 +1,50 @@
+{
+  "name": "naeso",
+  "version": "1.0.0",
+  "description": "Naesofteak Package Manager for macOS",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "bin": {
+    "naeso": "src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/index.js --help"
+  },
+  "keywords": [
+    "naeso",
+    "naesofteak",
+    "package-manager",
+    "macos",
+    "installer",
+    "cli",
+    "mongodb",
+    "node",
+    "nginx",
+    "redis"
+  ],
+  "author": "Naesofteak Private Limited",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "commander": "^15.0.0"
+  },
+  "homepage": "https://github.com/naesofteak/naeso#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naesofteak/naeso.git"
+  },
+  "bugs": {
+    "url": "https://github.com/naesofteak/naeso/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

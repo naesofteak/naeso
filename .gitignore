@@ -1,0 +1,15 @@
+node_modules/
+.naeso/
+.DS_Store
+
+*.tgz
+*.tar.gz
+*.zip
+
+.env
+.env.*
+
+npm-debug.log*
+*.log
+
+coverage/
