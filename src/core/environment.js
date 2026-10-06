@@ -84,8 +84,11 @@ function configurePath(paths) {
   for (
     const configuredPath of paths
   ) {
+    const expandedPath =
+      expandHome(configuredPath);
+
     const pathLine =
-      `export PATH="${configuredPath}:$PATH"`;
+      `export PATH="${expandedPath}:$PATH"`;
 
     if (
       content.includes(
@@ -112,7 +115,8 @@ function configurePath(paths) {
   ) {
     fs.writeFileSync(
       shellConfig,
-      content
+      content,
+      "utf8"
     );
   }
 
@@ -159,8 +163,11 @@ function removePath(paths) {
   for (
     const configuredPath of paths
   ) {
+    const expandedPath =
+      expandHome(configuredPath);
+
     const pathLine =
-      `export PATH="${configuredPath}:$PATH"`;
+      `export PATH="${expandedPath}:$PATH"`;
 
     const block =
       `# Naeso PATH\n${pathLine}\n`;
@@ -206,7 +213,8 @@ function removePath(paths) {
   ) {
     fs.writeFileSync(
       shellConfig,
-      content
+      content,
+      "utf8"
     );
   }
 
