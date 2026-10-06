@@ -1,6 +1,6 @@
 {
   "name": "@naesofteak/naeso",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Naesofteak Package Manager for macOS",
   "main": "src/index.js",
   "type": "commonjs",
